@@ -96,3 +96,10 @@ So given the previous example, using a transformer, it will look something like 
 Last but not least we get an `utils`-directory.
 Here you can place handy utils you want to use inside your application.
 Out of the box it comes with a `loader`-util which will prevent the relative directory hell.
+
+## TODO
+
+ - Form Validation
+ - Notify
+ - Moment
+ - Bootstrap
