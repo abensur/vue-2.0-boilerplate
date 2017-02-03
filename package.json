@@ -1,36 +1,22 @@
 {
-  "name": "vue-2-boilerplate",
+  "name": "convenia-boilerplate",
   "version": "0.0.0",
   "description": "A boilerplate for medium to large Vue 2 single page applications",
   "main": "index.js",
   "scripts": {
-    "dev": "node build/dev-server.js",
+    "dev": "webpack-dashboard -- node build/dev-server.js",
     "build": "node build/build.js",
     "lint": "eslint --ext .js,.vue src test/unit/specs test/e2e/specs"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/petervmeijgaard/vue-2-boilerplate.git"
+    "url": "git+https://github.com/abensur/vue-2-boilerplate.git"
   },
-  "keywords": [
-    "Vue",
-    "Next",
-    "Boilerplate",
-    "Webpack",
-    "Lint",
-    "Medium",
-    "Large",
-    "SPA",
-    "Single",
-    "Page",
-    "Application"
-  ],
-  "author": "Peter van Meijgaard <petervanmeijgaard@hotmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/petervmeijgaard/vue-2-boilerplate/issues"
+    "url": "https://github.com/abensur/vue-2-boilerplate/issues"
   },
-  "homepage": "https://github.com/petervmeijgaard/vue-2-boilerplate#readme",
+  "homepage": "https://github.com/abensur/vue-2-boilerplate#readme",
   "dependencies": {
     "axios": "^0.15.3",
     "bootstrap": "^3.3.7",
@@ -83,6 +69,7 @@
     "vue-style-loader": "^1.0.0",
     "vue-template-compiler": "^2.1.0",
     "webpack": "^1.13.2",
+    "webpack-dashboard": "^0.3.0",
     "webpack-dev-middleware": "^1.8.3",
     "webpack-hot-middleware": "^2.12.2",
     "webpack-merge": "^0.14.1"

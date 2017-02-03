@@ -8,15 +8,21 @@ import {
 export default {
   [CHECK_AUTHENTICATION](state) {
     state.authenticated = !!localStorage.getItem('id_token');
+
     if (state.authenticated) {
       Vue.$http.defaults.headers.common.Authorization = `Bearer ${localStorage.getItem('id_token')}`;
     }
   },
 
-  [LOGIN](state, token) {
+  [LOGIN](state, opt) {
     state.authenticated = true;
-    localStorage.setItem('id_token', token);
-    Vue.$http.defaults.headers.common.Authorization = `Bearer ${token}`;
+    localStorage.setItem('id_token', opt.token);
+    localStorage.setItem('id_company', opt.companyId);
+
+    state.token = opt.token;
+    state.companyId = opt.companyId;
+
+    Vue.$http.defaults.headers.common.Authorization = `Bearer ${opt.token}`;
   },
 
   [LOGOUT](state) {

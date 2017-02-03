@@ -1,7 +1,7 @@
 import en from './en';
-import nl from './nl';
+import pt from './pt';
 
 export default {
   en,
-  nl,
+  pt,
 };

@@ -3,40 +3,31 @@
     <h1 class="panel-title"
         slot="heading"
     >
-      My Account
+      Minha conta
     </h1>
     <div slot="body">
       <table class="table table-striped">
         <thead>
         <tr>
           <th>
-            First Name
+            Token
           </th>
           <th>
-            Last Name
-          </th>
-          <th>
-            Email
+            Company ID
           </th>
         </tr>
         </thead>
         <tbody>
         <tr>
           <td>
-            {{$store.state.account.firstName}}
+            {{($store.state.auth.token).slice(0,5) + '...'}}
           </td>
           <td>
-            {{$store.state.account.lastName}}
-          </td>
-          <td>
-            {{$store.state.account.email}}
+            {{$store.state.auth.companyId}}
           </td>
         </tr>
         </tbody>
       </table>
-    </div>
-    <div slot="footer">
-      Made with love by Vivid Web
     </div>
   </v-panel>
 </v-layout>

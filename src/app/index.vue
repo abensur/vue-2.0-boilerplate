@@ -7,23 +7,13 @@
   /* ============
    * Entry Point
    * ============
-   *
-   * The entry point of the application
    */
-
   import store from './store';
   import { router } from './../bootstrap';
   import accountService from './services/account';
 
   export default {
-    /**
-     * The Vuex store
-     */
     store,
-
-    /**
-     * The router
-     */
     router,
 
     /**

@@ -38,3 +38,28 @@ export default class AccountTransformer extends Transformer {
     };
   }
 }
+
+
+// export const UsersResource = Vue.resource(API_ROOT + 'company{/id}', {}, {
+//     users: {method: 'GET', url: API_ROOT + 'company{/id}/users'},
+//     downloadReport: {method: 'GET', url: API_ROOT + 'company{/id}/report/utilization'},
+//     unableUser: {method: 'POST', url: API_ROOT + 'company/{id}/user/{userId}/block'},
+//     inviteUser: {method: 'POST', url: API_ROOT + 'company/{id}/user/invite'},
+// })
+// export const PartnersResource = Vue.resource(API_ROOT + 'company{/id}', {}, {
+//     partners: {method: 'GET', url: API_ROOT + 'company{/id}/partner'},
+//     partnersExclusive: {method: 'GET', url: API_ROOT + 'company{/id}/partner'},
+// })
+
+// export const ReportsResource = Vue.resource(API_ROOT + 'company{/id}', {}, {
+//     exclusivePartners: {method: 'GET', url: API_ROOT + 'company{/id}/report/exclusive-partner'},
+//     campaigns: {method: 'GET', url: API_ROOT + 'company{/id}/report/campaign'},
+//     users: {method: 'GET', url: API_ROOT + 'company{/id}/report/user'},
+//     utilization: {method: 'GET', url: API_ROOT + 'company{/id}/report/utilization'},
+// })
+
+// export const OrdersResource = Vue.resource(API_ROOT + 'company{/id}', {}, {
+//     history: {method: 'GET', url: API_ROOT + '
+// company{/id}/campaign/40258af0-94c4-11e6-acf4-372596db8fqs/history'},
+//     partnersExclusive: {method: 'GET', url: API_ROOT + 'company{/id}/partner'},
+// })

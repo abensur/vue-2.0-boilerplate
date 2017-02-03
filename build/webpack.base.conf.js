@@ -1,4 +1,5 @@
 var path = require('path')
+var DashboardPlugin = require('webpack-dashboard/plugin');
 var config = require('../config')
 var utils = require('./utils')
 var projectRoot = path.resolve(__dirname, '../')
@@ -94,6 +95,9 @@ module.exports = {
       }
     ]
   },
+  plugins: [
+    new DashboardPlugin()
+  ],
   eslint: {
     formatter: require('eslint-friendly-formatter')
   },

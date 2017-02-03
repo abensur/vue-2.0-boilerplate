@@ -1,19 +1,6 @@
 /* ============
- * Bootstrap File
- * ============
- *
- * Will configure and bootstrap the application
- */
-
-
-/* ============
  * Vue
  * ============
- *
- * Vue.js is a library for building interactive web interfaces.
- * It provides data-reactive components with a simple and flexible API.
- *
- * http://rc.vuejs.org/guide/
  */
 import Vue from 'vue';
 
@@ -42,6 +29,7 @@ Axios.interceptors.response.use(
       authService.logout();
     }
   });
+
 Vue.$http = Axios;
 
 
@@ -74,8 +62,10 @@ import routes from './app/routes';
 Vue.use(VueRouter);
 
 export const router = new VueRouter({
+  mode: 'history',
   routes,
 });
+
 router.beforeEach((to, from, next) => {
   if (to.matched.some(m => m.meta.auth) && !store.state.auth.authenticated) {
     /*
