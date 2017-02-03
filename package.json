@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/abensur/vue-2-boilerplate#readme",
   "dependencies": {
+    "animate.css": "^3.5.2",
     "axios": "^0.15.3",
     "bootstrap": "^3.3.7",
     "font-awesome": "^4.7.0",

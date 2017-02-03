@@ -20,7 +20,7 @@
         <tbody>
         <tr>
           <td>
-            {{($store.state.auth.token).slice(0,5) + '...'}}
+            {{($store.state.auth.token || '').slice(0,5) + '...'}}
           </td>
           <td>
             {{$store.state.auth.companyId}}
