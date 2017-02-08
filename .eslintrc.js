@@ -25,12 +25,10 @@ module.exports = {
   // add your custom rules here
   'rules': {
     'global-require': 0,
-
     'no-param-reassign': 0,
-
     'import/no-unresolved': 0,
     'import/imports-first': 0,
-
+    'no-shadow': 0,
     // don't require .vue extension when importing
     'import/extensions': ['error', 'always', {
       'js': 'never',

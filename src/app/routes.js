@@ -5,6 +5,8 @@
  * The routes and redirects are defined in this file
  */
 
+import Home from './views/home';
+import Login from './views/login';
 
 /**
  * The routes
@@ -16,21 +18,7 @@ export default [
   {
     path: '/home',
     name: 'home.index',
-    component: require('pages/home/index/index.vue'),
-
-    // If the user needs to be authenticated to view this page
-    meta: {
-      auth: true,
-    },
-  },
-
-  // Account
-  {
-    path: '/account',
-    name: 'account.index',
-    component: require('pages/account/index/index.vue'),
-
-    // If the user needs to be authenticated to view this page
+    component: Home,
     meta: {
       auth: true,
     },
@@ -40,31 +28,12 @@ export default [
   {
     path: '/login',
     name: 'login.index',
-    component: require('pages/login/index/index.vue'),
-
-    // If the user needs to be a guest to view this page
+    component: Login,
     meta: {
       guest: true,
     },
   },
 
-  // Register
-  {
-    path: '/register',
-    name: 'register.index',
-    component: require('pages/register/index/index.vue'),
-
-    // If the user needs to be a guest to view this page
-    meta: {
-      guest: true,
-    },
-  },
-  {
-    path: '/',
-    redirect: '/home',
-  },
-  {
-    path: '/*',
-    redirect: '/home',
-  },
+  { path: '/', redirect: '/home' },
+  { path: '/*', redirect: '/home' },
 ];

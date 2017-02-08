@@ -9,44 +9,66 @@
 
 import Vue from 'vue';
 import Vuex from 'vuex';
-import createLogger from 'vuex/dist/logger';
-import * as actions from './actions';
-import * as getters from './getters';
-
-// Modules
-import account from './modules/account';
-import auth from './modules/auth';
 
 Vue.use(Vuex);
 
-const debug = process.env.NODE_ENV !== 'production';
+const state = {
+  auth: {
+    authenticated: false,
+  },
+};
 
-export default new Vuex.Store({
-  /**
-   * Assign the actions to the store
-   */
-  actions,
+const mutations = {
+  AUTHENTICATE(state, response) {
+    state.auth.authenticated = true;
+    state.auth.token = response.token;
 
-  /**
-   * Assign the getters to the store
-   */
-  getters,
+    localStorage.setItem('token', response.token);
 
-  /**
-   * Assign the modules to the store
-   */
-  modules: {
-    account,
-    auth,
+    Vue.router.push({
+      name: 'home.index',
+    });
   },
 
-  /**
-   * If strict mode should be enabled
-   */
-  strict: debug,
+  LOGOUT(state) {
+    state.auth.authenticated = false;
+    state.auth.token = null;
+    localStorage.removeItem('token');
 
-  /**
-   * Plugins used in the store
-   */
-  plugins: debug ? [createLogger()] : [],
+    Vue.router.push({
+      name: 'login.index',
+    });
+  },
+};
+
+const actions = {
+  Login({ commit }, user) {
+    const { email, password } = user;
+
+    Vue.$http
+       .post('/authenticate', { email, password })
+       .then((response) => {
+         const token = response.data.data.token;
+         const companyId = response.data.data.company[0].id;
+         commit('AUTHENTICATE', { token, companyId });
+       })
+        .catch((error) => {
+          alert(error);
+        });
+  },
+
+  checkAuthentication() {
+    Vue.router.push({
+      name: (state.auth.authenticated || localStorage.getItem('token')) ?
+        'login.index' :
+        'home.index',
+    });
+  },
+
+};
+
+export default new Vuex.Store({
+  state,
+  mutations,
+  actions,
 });
